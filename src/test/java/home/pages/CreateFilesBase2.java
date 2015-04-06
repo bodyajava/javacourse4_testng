@@ -6,21 +6,25 @@ import java.io.IOException;
 import org.apache.commons.io.FileUtils;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeGroups;
 
-public class CreateFilesFixture {
+public class CreateFilesBase2 {
 	
-	File dir = new File("/Users/bogdanlaukhin/Documents/Temp");
+	String basedir = ("/Users/bogdanlaukhin/Documents/");
+	String tmp_dir_prefix = "Temp2";	
 	
-	@BeforeClass
+	File dir = new File(basedir + tmp_dir_prefix);
+	
+	@BeforeGroups (groups = "positive2")
 	public void setUp() {		
 		if (!dir.exists()) {
 			if (dir.mkdir()) {
-				System.out.println("Directory is created");
+				System.out.println("Directory " + dir + " is created");
 			}
 		}
 	}
 	
-	@AfterClass
+	//@AfterClass
 	public void tearDown() {
 		
 		try {
@@ -32,7 +36,7 @@ public class CreateFilesFixture {
 		
 		if (dir.exists()) {
 			if (dir.delete()) {
-				System.out.println("Directory is deleted");
+				System.out.println("Directory " + dir + " is deleted");
 			}
 		}
 		

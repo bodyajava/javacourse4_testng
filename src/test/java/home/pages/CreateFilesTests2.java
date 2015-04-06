@@ -5,12 +5,15 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 
-@Test
-public class CreateFilesTests extends CreateFilesFixture {
+
+public class CreateFilesTests2 extends CreateFilesBase2 {
 	
-	
+	@Test (groups = "positive2")
 	public void test1() {
-		File file1 = new File("/Users/bogdanlaukhin/Documents/Temp/file1.txt");
+		System.out.println("Executing base2 - test1");
+		String path = basedir + tmp_dir_prefix + "/" + "file1.txt";
+		File file1 = new File(path);
+		System.out.println(file1);
 		
 		try {
 			if (file1.createNewFile()) {
@@ -22,9 +25,12 @@ public class CreateFilesTests extends CreateFilesFixture {
 		}
 	} 
 
-	
+	@Test (groups = "positive2")
 	public void test2() {
-		File file2 = new File("/Users/bogdanlaukhin/Documents/Temp/file2.txt");
+		System.out.println("Executing base2 - test2");
+		String path = basedir + tmp_dir_prefix + "/" + "file2.txt";
+		File file2 = new File(path);
+		System.out.println(file2);
 		
 		try {
 			if (file2.createNewFile()) {
@@ -36,8 +42,11 @@ public class CreateFilesTests extends CreateFilesFixture {
 		}
 	} 
 	
+	@Test (groups = "negative2")
 	public void test3() {
-		File file2 = new File("/Users/bogdanlaukhin/Documents/Temp/file2.txt");
+		System.out.println("Executing base2 - test3");
+		String path = basedir + tmp_dir_prefix + "/" + "file2.txt";
+		File file2 = new File(path);
 		
 		if (file2.exists()) {
 				System.out.println("File + " + file2 + " exists");
