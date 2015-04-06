@@ -11,7 +11,7 @@ public class CreateFilesBase1 {
 	
 	File dir = new File("/Users/bogdanlaukhin/Documents/Temp1");
 	
-	@BeforeGroups (groups = "positive1")
+	@BeforeGroups (groups = {"positive1"})
 	public void setUp() {		
 		if (!dir.exists()) {
 			if (dir.mkdir()) {

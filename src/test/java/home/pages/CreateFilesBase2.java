@@ -15,7 +15,7 @@ public class CreateFilesBase2 {
 	
 	File dir = new File(basedir + tmp_dir_prefix);
 	
-	@BeforeGroups (groups = "positive2")
+	@BeforeGroups (groups = {"positive2"})
 	public void setUp() {		
 		if (!dir.exists()) {
 			if (dir.mkdir()) {

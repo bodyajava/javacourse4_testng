@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 public class CreateFilesTests2 extends CreateFilesBase2 {
 	
-	@Test (groups = "positive2")
+	@Test (groups = {"positive2"})
 	public void test1() {
 		System.out.println("Executing base2 - test1");
 		String path = basedir + tmp_dir_prefix + "/" + "file1.txt";
@@ -25,7 +25,7 @@ public class CreateFilesTests2 extends CreateFilesBase2 {
 		}
 	} 
 
-	@Test (groups = "positive2")
+	@Test (groups = {"positive2"})
 	public void test2() {
 		System.out.println("Executing base2 - test2");
 		String path = basedir + tmp_dir_prefix + "/" + "file2.txt";
@@ -42,7 +42,7 @@ public class CreateFilesTests2 extends CreateFilesBase2 {
 		}
 	} 
 	
-	@Test (groups = "negative2")
+	@Test (groups = {"negative2"})
 	public void test3() {
 		System.out.println("Executing base2 - test3");
 		String path = basedir + tmp_dir_prefix + "/" + "file2.txt";
