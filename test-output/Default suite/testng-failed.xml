@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="home.pages.CreateFilesTests2">
+      <class name="home.pages.FileCreationTests">
         <methods>
-          <include name="test2"/>
-          <include name="test3"/>
+          <include name="test1"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- home.pages.CreateFilesTests2 -->
+      </class> <!-- home.pages.FileCreationTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

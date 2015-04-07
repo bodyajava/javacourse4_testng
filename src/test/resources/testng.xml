@@ -2,13 +2,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Tests" verbose="5" data-provider-thread-count="1">
 	<test name="Test1">
-		<groups>
-		  <run>
-		  	<include name="positive2"></include>
-		  </run>
-		</groups>
-		<packages>
-		    <class name="home.pages.*"/>
-		</packages>
-	</test>
+		<parameter name="path" value="/"/>
+		<classes>
+		    <class name="home.pages.FileCreationTests"/>
+		</classes>
+	</test>  
 </suite>
