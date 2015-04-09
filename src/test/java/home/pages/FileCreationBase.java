@@ -6,6 +6,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Method;
+
 import org.apache.commons.io.FileUtils;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -17,7 +20,8 @@ public class FileCreationBase {
 	File dir = new File(basedir + tmp_dir_prefix);
 	
 	@BeforeClass
-	public void setUp() {		
+	public void setUp(Method m) {
+		
 		if (!dir.exists()) {
 			if (dir.mkdir()) {
 				System.out.println("Temp directory is created.");
@@ -26,9 +30,22 @@ public class FileCreationBase {
 			try { FileUtils.cleanDirectory(dir); }
 			catch (IOException e) { e.printStackTrace(); }
 		}
+		
+		if (m.getAnnotation(ReadOnlyDir.class) !=null) {
+			dir.setReadOnly();
+		}
+		
+		/*Annotation[][] parameters = m.getParameterAnnotations();
+		for (Annotation[] parameter : parameters) {
+			System.out.println(parameter);
+				//dir.setReadOnly();
+				
+			}
+		*/
+		
 	}
 	
-	@AfterClass
+	//@AfterClass
 	public void tearDown() {
 		try { FileUtils.cleanDirectory(dir); }
 		catch (IOException e) { e.printStackTrace(); } 

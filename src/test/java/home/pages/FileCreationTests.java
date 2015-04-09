@@ -23,8 +23,9 @@ public class FileCreationTests extends FileCreationBase {
 		fileNames.add(new Object[]{"adminFile2.txt"});
 		return fileNames.iterator();
 	}
-			
+			 
 	@Test (dataProvider = "FileNamesGenerator")
+	@ReadOnlyDir
 	public void test1(String fileName) {
 		String path = basedir + tmp_dir_prefix + "/" + fileName;
 		File file1 = new File(path);
@@ -38,7 +39,7 @@ public class FileCreationTests extends FileCreationBase {
 		Assert.assertTrue(file1.exists(), "file1 exists");
 	}
 	
-	@Test (dataProvider = "FileNamesGenerator2")
+	//@Test (dataProvider = "FileNamesGenerator2")
 	public void test2(String fileName) {
 		String path = basedir + tmp_dir_prefix + "/" + fileName;
 		File file1 = new File(path);
