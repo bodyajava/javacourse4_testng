@@ -24,8 +24,9 @@ public class FileCreationTests extends FileCreationBase {
 		return fileNames.iterator();
 	}
 			 
-	@Test (dataProvider = "FileNamesGenerator")
-	@ReadOnlyDir
+	@Test (dataProvider = "FileNamesGeneratorXLS", dataProviderClass = FileCreationBase.class)
+	//@ReadOnlyDir
+	@XlsDataSource("data.xls")
 	public void test1(String fileName) {
 		String path = basedir + tmp_dir_prefix + "/" + fileName;
 		File file1 = new File(path);
