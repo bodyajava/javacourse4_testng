@@ -5,7 +5,7 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 
-public class CreateFiles {
+public class aCreateFiles {
 	
 	@Test (groups = {"positive"})
 	public void test1() {

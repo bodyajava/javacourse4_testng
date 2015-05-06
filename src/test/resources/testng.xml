@@ -4,13 +4,13 @@
 	<test name="Test1">
 		<groups>
 		  <run>
+		  	<include name = "positive1"></include>
 		  	<include name = "positive2"></include>
+		  	<include name = "negative1"></include>
 		  </run>
 		</groups>
 		<packages>
-		  <package>
-		    <class name="home.pages.*"/>
-		  </package>
+		  <package name="home.pages.*"/>
 		</packages>
 	</test>  
 </suite>

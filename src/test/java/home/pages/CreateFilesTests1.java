@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class CreateFilesTests1 extends CreateFilesBase1 {
 	
-	@Test (groups = {"positive1"})
+	@Test (groups = {"positive1"}, priority = 1)
 	public void test1() {
 		System.out.println("Executing base1 - test1");
 		File file1 = new File("/Users/bogdanlaukhin/Documents/Temp1/file1.txt");
@@ -19,9 +19,10 @@ public class CreateFilesTests1 extends CreateFilesBase1 {
 			
 			e.printStackTrace();
 		}
+		System.out.println(">>>>>>>>>>>>>>> GROUP 'positive1', TEST #1: was executed <<<<<");
 	} 
 
-	@Test (groups = {"positive1"})
+	@Test (groups = {"positive2"}, priority = 1)
 	public void test2() {
 		System.out.println("Executing base1 - test2");
 		File file2 = new File("/Users/bogdanlaukhin/Documents/Temp1/file2.txt");
@@ -34,9 +35,10 @@ public class CreateFilesTests1 extends CreateFilesBase1 {
 			
 			e.printStackTrace();
 		}
+		System.out.println(">>>>>>>>>>>>>>> GROUP 'positive2', TEST #2: was executed <<<<<");
 	} 
 	
-	@Test (groups = {"negative1"})
+	@Test (groups = {"negative1"}, priority = 10)
 	public void test3() {
 		System.out.println("Executing base1 - test3");
 		File file2 = new File("/Users/bogdanlaukhin/Documents/Temp1/file2.txt");
@@ -53,6 +55,7 @@ public class CreateFilesTests1 extends CreateFilesBase1 {
 					e.printStackTrace();
 				}
 			}
+		System.out.println(">>>>>>>>>>>>>>> GROUP 'negative1', TEST #3: was executed <<<<<");
 	} 
 	
 }

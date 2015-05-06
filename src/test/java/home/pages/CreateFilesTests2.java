@@ -15,7 +15,7 @@ public class CreateFilesTests2 extends CreateFilesBase2 {
 	String path2 = basedir + tmp_dir_prefix + "/" + "file2.txt";
 	File file2 = new File(path2);
 	
-	@Test (groups = {"positive2"})
+	//@Test (groups = {"positive2"})
 	public void test1() {
 		System.out.println("Executing base2 - test1");
 		System.out.println(file1);
@@ -29,7 +29,7 @@ public class CreateFilesTests2 extends CreateFilesBase2 {
 		Assert.assertTrue(file1.exists(), "file1 exists");
 	} 
 
-	@Test (groups = {"positive2"})
+	//@Test (groups = {"positive2"})
 	public void test2() {
 		System.out.println("Executing base2 - test2");
 		System.out.println(file2);
@@ -44,7 +44,7 @@ public class CreateFilesTests2 extends CreateFilesBase2 {
 		Assert.assertFalse(file1.exists(), "file1 not exists");
 	} 
 	
-	@Test (groups = {"negative2"})
+	//@Test (groups = {"negative2"})
 	public void test3() {
 		System.out.println("Executing base2 - test3");
 		String path = basedir + tmp_dir_prefix + "/" + "file2.txt";

@@ -3,7 +3,7 @@ package home.pages;
 import org.testng.annotations.Test;
 import org.testng.annotations.*;
 
-public class FirstClass {
+public class aFirstClass {
 	
 	@Test	
 	public void test1() {

@@ -24,7 +24,7 @@ public class FileCreationTests extends FileCreationBase {
 		return fileNames.iterator();
 	}
 			 
-	@Test (dataProvider = "FileNamesGeneratorXLS", dataProviderClass = FileCreationBase.class)
+	//@Test (dataProvider = "FileNamesGeneratorXLS", dataProviderClass = FileCreationBase.class)
 	//@ReadOnlyDir
 	@XlsDataSource("data.xls")
 	public void test1(String fileName) {
